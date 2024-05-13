@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font01);
+}
+
+:root {
+    --color01: #000000;
+    --color02: #ffffff;
+    --color03: #c89c5c;
+    --color04: #adadad;
+    --color05: rgba(200, 156, 92, 0.5);
+
+    --font01: 'Oswald';
+    --font02: 'Raleway';
+    --font03: 'Times new roman';
+
+    --font-size01: 20px;
+    --font-size02: 30px;
+    --font-size03: 40px;
+    --font-size04: 12px;
+
+
+
+    --thin: 100;
+    --regular: 400;
+    --medium: 500;
+    --bold: 800;
+    
+}
+
+
+  HEADER */
+
+
+header {
+    height: 100vh;
+    background-image: url(img/h5-revolution-img-1.jpg);
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color02);
+    padding: 20px;
+    transition: 0.3ms;
+}
+
+.reseaux {
+    display: flex;
+}
+
+.reseaux i, .reseaux a {
+    color: var(--color02);
+    padding: 10px;
+    transition: 0.3ms;
+
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img {
+    height: 80%;
+}
+
+li a:hover, .reseaux i:hover {
+    opacity: 0.8;
+}
+
+
+/* SECTION CITATION */
+
+#citation {
+    background: var(--color03);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#citation p {
+    text-transform: uppercase;
+    color: var(--color02);
+    font-weight: var(--bold);
+    font-size: var(--font-size03);
+    line-height: 40px;
+}
+
+/* SECTION TRADITIONS */
+
+#traditions {
+    /* height: 100vh; */
+}
+
+.beer {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 80px;
+}
+
+.images {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('img/h5-el-holder-img-1-1.jpg');
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: var(--font-size03);
+    font-weight: var(--regular);
+}
+
+h4 {
+    font-style: italic;
+    font-family: var(--font03);
+    font-weight: var(--thin);
+}
+
+.beer-p {
+    font-family: var(--font02);
+    color: var(--color04);
+    font-size: var(--font-size04);
+    text-align: center;
+    padding: 15px 0;
+}
+
+button {
+    padding: 8px 35px;
+    background-color: var(--color03);
+    color: var(--color02);
+    border: none;
+    text-transform: uppercase;
+    transition: 0.3ms;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.pub {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+
+/* SECTION GALERIE */
+
+#galerie {
+    display: flex;
+}
+
+.img-galerie {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.figure-with-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.fa-plus {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) rotate(30deg); 
+    color: var(--color02);
+    font-size: 90px;
+    font-weight: var(--thin);
+    opacity: 0;
+    transition: 0.3s;
+} 
+
+.figure-with-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+.figure-with-icon:hover .img-galerie {
+    cursor: pointer;    transform: scale(1.1);
+}
+
+.figure-with-icon:hover:after    {
+    background-color: var(--color05);
+    z-index: 1;
+}
+
+.figure-with-icon:hover .fa-plus {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg); 
+}
+
+/* SECTION SERVICES */
+
+#services {
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+}
+
+.service-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    padding-top: 10px;
+    transition: 0.3s;
+}
+
+.service-icon:hover h3 {
+    color: var(--color03);
+}
+
+.service-icon:hover  .service-img {
+    background-color: var(--color03);
+}
+
+/* SECTION PARALLAXE */
+
+#parallaxe {
+    background-image: url('img/h5-parallax-img-2.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    padding: 80px 0; 
+    text-align: center;
+    color: var(--color02)
+}
+
+.parallaxe-p {
+    color: var(--color04);
+    padding-top: 5px;
+    font-weight: var(--thin);
+}
