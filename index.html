@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beergarden</title>
+    <meta name="description" content="Découvrez notre beer garden: pub traditionnel à Strasbourg, brassant des bières artisanales uniques. Profitez de l'ambiance conviviale et de la fraîcheur de nos breuvages ! ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -15,26 +16,30 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation">
             <figure>
                 <a href="#"><img src="img/logo-light.png" alt="Logo Beer Garden"></a>
             </figure>
-            <ul>
+            <ul class="navbar-links">
                 <li><a href="#home">home</a></li>
                 <li><a href="#tradition">tradition</a></li>
                 <li><a href="#services">services</a></li>
                 <li><a href="#menu">menu</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
+
+            <button class="burger">
+                <span class="bar"></span>
+            </button>
+
             <div class="reseaux">
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        
             </div>
         </nav>
         <figure class="hero">
-            <img class="hero-img" src="img/h5-slider-graphic.png" alt="Illutration Beer Garden">
+            <img class="hero-img" src="img/h5-slider-graphic.png" alt="Illustration Beer Garden">
         </figure>
     </header>
 
@@ -45,7 +50,6 @@
         </section>
 
         <section id="traditions">
-
             <div class="beer">
                 <div class="text">
                     <h2>beer tradition</h2>
@@ -54,49 +58,40 @@
                     </p>
                     <button>Read more</button>
                 </div>
-
                 <div class="images">
                     <figure>
                         <img src="img/h5-holder-image-1.png" alt="Best beer tradition for you">
                     </figure>
                 </div>
             </div>
-
             <div class="pub">
                 <div class="text">
-                    <h2>pub story</h2>
+                    <h2><em>pub</em> story</h2>
                     <h4>Tons of shortcodes provide countless options</h4>
                     <p class="beer-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita consequatur corporis necessitatibus, magnam aspernatur, alias iste dolore minus eius vel porro, iure veniam ad. Eos voluptatum iusto, assumenda rerum, pariatur numquam deserunt sint esse exercitationem officiis in, cumque ad ipsam quisquam cum quam culpa natus repellendus doloribus temporibus placeat molestias.
                     </p>
                     <button>Read more</button>
                 </div>
-
                 <div class="images">
                     <figure>
                         <img src="img/h5-holder-image-2.png" alt="Drink beer a good reason to meet with friends">
                     </figure>
                 </div>
             </div>
-
         </section>
 
         <section id="galerie">
-            
             <figure class="figure-with-icon">
-                <img class="img-galerie" src="img/h5-gallery-img-1-477x477.jpg" alt="Intérieur du bar">            <i class="fa-solid fa-plus"></i>
-
+                <img class="img-galerie" src="img/h5-gallery-img-1-477x477.jpg" alt="Intérieur du bar BeerGarden">            <i class="fa-solid fa-plus"></i>
             </figure>
             <figure class="figure-with-icon">
                 <img class="img-galerie" src="img/h5-gallery-img-2-477x477.jpg" alt="Amis qui trinquent">            <i class="fa-solid fa-plus"></i>
-
             </figure>
             <figure class="figure-with-icon">
-                <img class="img-galerie" src="img/h5-gallery-img-3-477x477.jpg" alt="Intérieur du bar">            <i class="fa-solid fa-plus"></i>
-
+                <img class="img-galerie" src="img/h5-gallery-img-3-477x477.jpg" alt="Intérieur du <em>pub</em> BeerGarden">            <i class="fa-solid fa-plus"></i>
             </figure>
             <figure class="figure-with-icon">
                 <img class="img-galerie" src="img/h5-gallery-img-4-477x477.jpg" alt="Repas entre amis">            <i class="fa-solid fa-plus"></i>
-
             </figure>
         </section>
 
@@ -115,7 +110,6 @@
                 <h3>Second chance</h3>
                 <p class="beer-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis totam mollitia sapiente, nihil architecto officia corporis nisi libero asperiores aliquid blanditiis, praesentium earum at dolorum excepturi nam officiis dicta quis?</p>
             </div>
-
             <div class="service-icon">
                 <figure>
                     <img src="img/h5-icon-3.png" alt="Icone Test it all">
@@ -123,7 +117,6 @@
                 <h3>Test it all</h3>
                 <p class="beer-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis totam mollitia sapiente, nihil architecto officia corporis nisi libero asperiores aliquid blanditiis, praesentium earum at dolorum excepturi nam officiis dicta quis?</p>
             </div>
-
             <div class="service-icon">
                 <figure>
                     <img src="img/h5-icon-4.png" alt="Icone Refresh your time">
@@ -140,10 +133,9 @@
 
         <section id="maps">
             <figure>
-                <img src="" alt="">
+                <img src="img/maps.jpg" alt="section google maps" class="maps">
             </figure>
         </section>
-
     </main>
     
     <footer>
@@ -151,5 +143,8 @@
             <img src="img/footer-logo.png" alt="Logo Revolver">
         </figure>
     </footer>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>

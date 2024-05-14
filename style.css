@@ -20,18 +20,19 @@
     --font-size02: 30px;
     --font-size03: 40px;
     --font-size04: 12px;
-
-
+    
 
     --thin: 100;
     --regular: 400;
     --medium: 500;
     --bold: 800;
-    
 }
 
+em {
+    font-style: normal;
+}
 
-  HEADER */
+  /* HEADER */
 
 
 header {
@@ -48,6 +49,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999;
 }
 
 ul {
@@ -262,9 +264,7 @@ h3 {
     color: var(--color03);
 }
 
-.service-icon:hover  .service-img {
-    background-color: var(--color03);
-}
+
 
 /* SECTION PARALLAXE */
 
@@ -282,4 +282,198 @@ h3 {
     color: var(--color04);
     padding-top: 5px;
     font-weight: var(--thin);
+}
+
+.maps {
+    width: 100%;
+    display: block; 
+}
+
+
+/* FOOTER */
+
+footer {
+    height: 100px;
+    background-color: var(--color01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RESPONSIVE */
+
+.burger {
+    display: none;
+}
+
+@media only screen and (max-width : 1024px) {
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 0;
+        min-height: 50vh;
+        position: absolute;
+        top: 76px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: all .5s ease-in-out;
+        z-index: 1;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .navbar {
+        padding: 20px 50px;
+    }
+
+    .show-nav .navbar-links {
+        width: 100%;
+    }       
+
+    .navbar-link {
+        transform: translateX(101%);
+    }
+
+    .show-nav .navbar-link {
+        transform: translateX(0);
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 50px;
+        transition: all .4s ease-in-out;
+    }
+
+    .navbar-link>a:hover {
+        padding-left: 2rem;
+        letter-spacing: 5px;
+    }
+
+    /* toggle menu */
+
+    .burger {
+        display: block;
+        position: relative;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 45px;
+        height: 4px;
+        background: white;
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+    }
+
+    .show-nav .bar {
+        width: 0;
+        background: transparent;
+    }
+
+    .bar::before,
+    .bar::after {
+        content: "";
+        width: 45px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        background: white;
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+    }
+
+    .bar::before {
+        transform: translateY(-12px);
+    }
+
+    .bar::after {
+        transform: translateY(12px);
+    }
+
+    .show-nav .bar::before {
+        transform: rotate(45deg);
+    }
+
+    .show-nav .bar::after {
+        transform: rotate(-45deg);
+    }
+    .hero-img {
+        height: 60%;
+    }
+    #citation p {
+        font-size: var(--font-size01);
+    }
+    .beer {
+        flex-direction: column;
+    }
+    .text, .images {
+        width: 100%;
+    }
+    .pub {
+        flex-direction: column;
+    }
+    #galerie {
+        flex-wrap: wrap;
+    }
+    .figure-with-icon {
+        width: 50%;
+    }
+    #services {
+        flex-wrap: wrap;
+    }
+    .beer-p {
+        font-size: var(--font-size01);
+    }
+    h4, h3 {
+        font-size: var(--font-size02);
+    }
+    button {
+        padding: 20px 60px;
+        font-size: var(--font-size01);
+    }
+
+    @media only screen and (max-width : 400px) {
+        .reseaux {
+            display: none;
+        }
+        .hero-img {
+            height: 50%;
+        }
+        header, .hero {
+            height: 50vh;
+        }
+        #citation {
+            height: 350px;
+            text-align: center;
+            padding: 20px;
+        }
+        .text {
+            padding: 20px;
+        }
+        h4 {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .images figure{
+            display: flex;
+            justify-content: center;
+        }
+        .images img {
+            width: 80%;
+        }
+        .figure-with-icon {
+            width: 100%;
+        }
+        #services {
+            padding: 20px;
+        }
+    }
 }
