@@ -9,7 +9,7 @@
     --color01: #000000;
     --color02: #ffffff;
     --color03: #c89c5c;
-    --color04: #adadad;
+    --color04: #5c5b5b;
     --color05: rgba(200, 156, 92, 0.5);
 
     --font01: 'Oswald';
@@ -38,10 +38,16 @@ em {
 header {
     height: 100vh;
     background-image: url(img/h5-revolution-img-1.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .navbar {
     width: 100%;
+    height: 70px;
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -50,6 +56,10 @@ header {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 999;
+}
+
+.logo-navbar {
+    height: 30px;
 }
 
 ul {
@@ -85,6 +95,7 @@ li a {
 
 .hero-img {
     height: 80%;
+    padding-top: 70px;
 }
 
 li a:hover, .reseaux i:hover {
@@ -112,13 +123,11 @@ li a:hover, .reseaux i:hover {
 
 /* SECTION TRADITIONS */
 
-#traditions {
-    /* height: 100vh; */
-}
 
-.beer {
+.beer, .pub {
     display: flex;
     align-items: center;
+    height: 80vh;
 }
 
 .text {
@@ -127,11 +136,13 @@ li a:hover, .reseaux i:hover {
     align-items: center;
     justify-content: center;
     width: 50%;
-    padding: 80px;
+    height: 100%;
+    padding: 50px;
 }
 
 .images {
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,9 +150,15 @@ li a:hover, .reseaux i:hover {
     background-image: url('img/h5-el-holder-img-1-1.jpg');
 }
 
+.images figure {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
 h2 {
     text-transform: uppercase;
-    font-size: var(--font-size03);
+    font-size: 50px;
     font-weight: var(--regular);
 }
 
@@ -154,9 +171,11 @@ h4 {
 .beer-p {
     font-family: var(--font02);
     color: var(--color04);
-    font-size: var(--font-size04);
+    font-size: 15px;
     text-align: center;
-    padding: 15px 0;
+    padding: 50px;
+    line-height: 19px;
+
 }
 
 button {
@@ -243,7 +262,6 @@ button:hover {
 
 #services {
     display: flex;
-    flex-direction: row;
     padding: 100px;
 }
 
@@ -284,21 +302,42 @@ h3 {
     font-weight: var(--thin);
 }
 
-.maps {
-    width: 100%;
-    display: block; 
+#maps {
+    position: relative;
+    z-index: 1;
 }
 
-
-/* FOOTER */
+.maps {
+    width: 100%;
+    display: block;
+}
 
 footer {
-    height: 100px;
-    background-color: var(--color01);
+    position: relative;
+    height: 150px;
+    background-color: #202020;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -60px; /* Permet au footer de chevaucher la section maps */
+    z-index: 2;
 }
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -60px; 
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    background: linear-gradient(to top, rgba(32, 32, 32, 1), rgba(32, 32, 32, 0));
+    z-index: -1; /* Pour être derrière le contenu du footer */
+}
+
+footer figure {
+    z-index: 2; 
+}
+
 
 /* RESPONSIVE */
 
@@ -314,7 +353,7 @@ footer {
         width: 0;
         min-height: 50vh;
         position: absolute;
-        top: 76px;
+        top: 70px;
         right: 0;
         background: rgba(0, 0, 0, 0.7);
         transition: all .5s ease-in-out;
@@ -406,20 +445,24 @@ footer {
         transform: rotate(-45deg);
     }
     .hero-img {
-        height: 60%;
+        height: 70%;
     }
     #citation p {
         font-size: var(--font-size01);
+        text-align: center;
+        padding: 0 10px;
     }
-    .beer {
-        flex-direction: column;
+    .beer, .pub {
+        height: auto;        
+        flex-direction: column-reverse;
+    }
+    .beer-p{
+        padding: 20px 0;
     }
     .text, .images {
         width: 100%;
     }
-    .pub {
-        flex-direction: column;
-    }
+
     #galerie {
         flex-wrap: wrap;
     }
@@ -428,12 +471,14 @@ footer {
     }
     #services {
         flex-wrap: wrap;
+        padding: 30px;
     }
     .beer-p {
         font-size: var(--font-size01);
     }
     h4, h3 {
         font-size: var(--font-size02);
+        text-align: center;
     }
     button {
         padding: 20px 60px;
@@ -444,23 +489,36 @@ footer {
         .reseaux {
             display: none;
         }
-        .hero-img {
-            height: 50%;
+        .navbar-links {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .navbar-links a {
+            font-size: 30px;
         }
         header, .hero {
             height: 50vh;
         }
+        .hero-img {
+            height: 80%;
+        }
         #citation {
-            height: 350px;
+            height: 250px;
             text-align: center;
             padding: 20px;
         }
         .text {
             padding: 20px;
         }
+        .beer-p {
+            padding: 20px;
+        }     
+        .text button {
+            margin-bottom: 20px;
+        }   
         h4 {
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
+            font-size: 25px;
         }
         .images figure{
             display: flex;
